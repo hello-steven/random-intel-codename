@@ -8,6 +8,7 @@ import createServer from '../lib/shell';
 describe('Server Module', function () {
   let server;
   beforeEach(function () {
+    this.timeout(5000); // extend timeout to allow for network latency
     server = createServer();
   });
   afterEach(function () {
