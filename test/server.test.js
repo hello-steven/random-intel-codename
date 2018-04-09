@@ -19,14 +19,38 @@ describe('Server Module', function () {
       .get('/')
       .expect(200);
   });
-  it('name returns a name', () => {
+  it('/name returns a name', () => {
     return supertest(server)
       .get('/name')
       .expect(200)
       .then(res => {
         let name = res.text;
         expect(name).to.be.a('string');
+        expect(/{/g.test(name)).to.equal(false);
         expect(name.length > 2).to.equal(true);
+      });
+  });
+
+  it('/kebab return a kebab', () => {
+    return supertest(server)
+      .get('/kebab')
+      .expect(200)
+      .then(res => {
+        let name = res.text;
+        expect(name).to.be.a('string');
+        expect(/{/g.test(name)).to.equal(false); // make sure it just a name and not js object
+        expect(name.length > 2).to.equal(true);
+      });
+  });
+  it('/all returns json', () => {
+    return supertest(server)
+      .get('/all')
+      .expect(200)
+      .then(res => {
+        let x = JSON.parse(res.text);
+        expect(x).to.be.an('object');
+        expect(x).to.have.property('name');
+        expect(x).to.have.property('kebabCase');
       });
   });
 });
