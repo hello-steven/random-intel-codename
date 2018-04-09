@@ -59,7 +59,7 @@ We use [ESLint](https://eslint.org/) to avoid divergent coding styles. The proce
 1. Init heroku with ```heroku create```
 1. Push code to heroku ```git push heroku master```
 1. Create a single dyno ```heroku ps:scale web=1```
-1. Open Project with ```heroku open``` should get a **Cannot GET /** because this server only exposes two end points.
+1. Open Project with ```heroku open```. 
 1. Boom the app is live on the web!
 1. Add `/name` to the URL to just return a random codename. 
 
