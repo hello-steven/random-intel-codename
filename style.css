@@ -1,0 +1,14 @@
+h1 {
+  font-family: sans-serif;
+  text-align: center;
+}
+button {
+  margin: 0 auto;
+  display: block;
+  box-shadow: none;
+  border: none;
+  background: #777;
+  padding: 1em;
+  color: #fff;
+  text-transform: uppercase;
+}
