@@ -9,20 +9,18 @@
   });
   displayName.innerHTML = '<p>Ax Wiki</p>';
   getName.addEventListener('click', function (event) {
-    let names = axios.get('/name')
+    let name = axios.get('/name')
     .then(function (res) {
-      return res.data;
+      displayName.innerHTML = '<p>' + res.data + '</p>';
+      console.log({
+        event: event,
+        getName: true,
+        name: res.data
+      });
     })
       // TODO: parse data
     .catch(function (error) {
       console.log(error);
     });
-    let currentTime = new Date();
-    console.log({
-      event: event,
-      getName: true,
-      names: names
-    });
-    displayName.innerHTML = '<p>Ax Wiki <br>' + currentTime + '</p>';
   });
 })();
