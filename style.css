@@ -11,4 +11,8 @@ button {
   padding: 1em;
   color: #fff;
   text-transform: uppercase;
+  transition: background .25s;
+}
+button:hover {
+  background: #333;
 }
