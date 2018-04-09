@@ -1,14 +1,7 @@
 (function () {
   console.log('client changes');
   // define variables that reference elements on our page
-  const displayName = document.getElementById('display_name');
-  const getName = document.getElementById('get_name');
-  console.log({
-    displayName: displayName,
-    getName: getName
-  });
-  displayName.innerHTML = '<p>Ax Wiki</p>';
-  getName.addEventListener('click', function (event) {
+  function getNewName () {
     let name = axios.get('/name')
     .then(function (res) {
       displayName.innerHTML = '<p>' + res.data + '</p>';
@@ -22,5 +15,15 @@
     .catch(function (error) {
       console.log(error);
     });
+  }
+  const displayName = document.getElementById('display_name');
+  const getName = document.getElementById('get_name');
+  console.log({
+    displayName: displayName,
+    getName: getName
+  });
+  getNewName();
+  getName.addEventListener('click', function (event) {
+    getNewName();
   });
 })();
