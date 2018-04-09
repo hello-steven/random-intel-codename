@@ -4,7 +4,13 @@
   "description": "An app name generator that takes names from intel's list of codenames",
   "main": "./dist/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "babel lib -d dist",
+    "start": "node dist/app.js",
+    "start-watch": "nodemon lib/app.js --exec babel-node",
+    "start-dev": "babel-node lib/app.js",
+    "test": "mocha  \"test/*.test.js\" --compilers js:babel-register",
+    "test-watch": "mocha \"test/*.test.js\" -w --compilers js:babel-register",
+    "lint": "eslint \"lib/**\" \"test/**\" "
   },
   "repository": {
     "type": "git",
@@ -18,5 +24,23 @@
   "bugs": {
     "url": "https://github.com/whiteboxpub/wiki-intel-namer/issues"
   },
-  "homepage": "https://github.com/whiteboxpub/wiki-intel-namer#readme"
+  "homepage": "https://github.com/whiteboxpub/wiki-intel-namer#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "dotenv": "^5.0.1",
+    "eslint": "^4.19.1",
+    "mocha": "^5.0.5",
+    "nodemon": "^1.17.3",
+    "sinon": "^4.5.0",
+    "supertest": "^3.0.0"
+  }
 }
