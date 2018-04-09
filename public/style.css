@@ -2,6 +2,13 @@ h1 {
   font-family: sans-serif;
   text-align: center;
 }
+div#display_name {
+  width: 85vw;
+  max-width: 300px;
+  text-align: center;
+  margin: 1em auto;
+  display: block;
+}
 button {
   margin: 0 auto;
   display: block;
