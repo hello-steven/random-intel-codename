@@ -1,0 +1,22 @@
+{
+  "name": "wiki-intel-namer",
+  "version": "1.0.0",
+  "description": "An app name generator that takes names from intel's list of codenames",
+  "main": "./dist/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whiteboxpub/wiki-intel-namer.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Steven Price, Travis Shears",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/whiteboxpub/wiki-intel-namer/issues"
+  },
+  "homepage": "https://github.com/whiteboxpub/wiki-intel-namer#readme"
+}
