@@ -26,7 +26,7 @@ To get Random Intel Codename server running on your local machine do the followi
 
 1. ```git clone https://github.com/whiteboxpub/random-intel-codename.git```
 1. ```cd random-intel-codename```
-1. ```npm install```
+1. ```./install.sh```
 1. ```npm run start```  ||  ```npm run start-watch```
 
 nodemon should now be active running the server on port 3000. You can access the frontend via **http://localhost:3000** . For just getting names you can request **http://localhost:3000/name** . Changes in the code will auto reload thanks to nodemon.  
@@ -57,7 +57,7 @@ We use [ESLint](https://eslint.org/) to avoid divergent coding styles. The proce
 1. Follow install instructions to get things up and running locally first.
 1. Make sure you have heroku account and [heroku-cli](https://devcenter.heroku.com/articles/heroku-cli)
 1. Init heroku with ```heroku create```
-1. Push code to heroku ```git push heroku master```
+1. Push code to heroku ```./deploy.sh```
 1. Create a single dyno ```heroku ps:scale web=1```
 1. Open Project with ```heroku open```. 
 1. Boom the app is live on the web!
