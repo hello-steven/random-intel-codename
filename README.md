@@ -1,6 +1,6 @@
 # Random Intel Codenames
 
-[![CircleCI](https://circleci.com/gh/BTBTravis/wiki-intel-namer.svg?style=svg)](https://circleci.com/gh/BTBTravis/wiki-intel-namer)
+[![CircleCI](https://circleci.com/gh/whiteboxpub/random-intel-codename.svg?style=svg)](https://circleci.com/gh/whiteboxpub/random-intel-codename)
 
 Simple app for getting random Intel codename
 
