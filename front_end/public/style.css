@@ -35,6 +35,7 @@ div#display_name {
   vertical-align: middle;
   margin-top: .25em;
   margin-left: .5em;
+  cursor: pointer;
 }
 button {
   margin: 0 auto;
@@ -50,6 +51,7 @@ button {
   border: solid #000 2px;
   box-shadow: 3px 3px 0px #000;
   border-radius: 4px;
+  cursor: pointer;
 }
 button:hover {
   background: #fff;

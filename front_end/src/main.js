@@ -1,46 +1,42 @@
 import axios from 'axios';
 
-(function () {
-  // define variables that reference elements on our page
-  function getNewName () {
-    let name = axios.get('/kebab')
-    .then(function (res) {
-      let newColor = randomColor();
-      displayName.style.background = 'hsla(' + newColor + ', 100%, 76%, 1)';
-      copyName.value = res.data;
-      clipboardValue.value = res.data;
+const randomColor = () => {
+  let randomHue = Math.floor(Math.random() * (360 - 1 + 1) + 1);
+  return `hsla(${randomHue}, 100%, 76%, 1)`;
+}
+
+const wrapperEl = document.getElementById('display_name');
+const inputEl = document.getElementById('copy_name');
+const getNameBtnEl = document.getElementById('get_name');
+const copyBtnEl = document.getElementById('copy_kebab');
+
+const getNewName = () => {
+  axios.get('/kebab')
+    .then(res => {
+      wrapperEl.style.background = randomColor();
+      inputEl.value = res.data;
+      copyBtnEl.value = res.data;
     })
-    // TODO: parse data
-    .catch(function (error) {
-      console.log(error);
-    });
+}
+
+const copyText = () => {
+  inputEl.select();
+  try {
+    let successful = document.execCommand('copy');
+    console.log('copied');
+  } catch (err) {
+    console.log('Oops, unable to copy');
   }
+};
 
-  function randomColor () {
-    return Math.floor(Math.random() * (360 - 1 + 1) + 1);
-  }
-
-  let copyText = function () {
-    const copyText = document.getElementById('copy_name');
-    copyText.select();
-    try {
-      let successful = document.execCommand('copy');
-      console.log('copied');
-    } catch (err) {
-      console.log('Oops, unable to copy');
-    }
-  };
-
-  const displayName = document.getElementById('display_name');
-  const copyName = document.getElementById('copy_name');
-  const getName = document.getElementById('get_name');
-  const clipboardValue = document.getElementById('copy_kebab');
-
+// attach event handlers
+getNameBtnEl.addEventListener('click', () => {
   getNewName();
-  getName.addEventListener('click', function () {
-    getNewName();
-  });
-  clipboardValue.addEventListener('click', function () {
-    copyText();
-  });
-})();
+});
+copyBtnEl.addEventListener('click', () => {
+  copyText();
+});
+
+// init get name
+getNewName();
+
