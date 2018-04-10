@@ -2,7 +2,7 @@ node_modules
 .env
 npm-debug.log
 dist
-/front_end/public/*.js
-/front_end/public/*.js.map
+front_end/public/*.js
+front_end/public/*.js.map
 bundle.js.map
 .orig
