@@ -4,7 +4,9 @@
   "description": "An app name generator that takes names from intel's list of codenames",
   "main": "./dist/app.js",
   "scripts": {
-    "postinstall": "npm install --prefix front_end && babel lib -d dist",
+    "heroku-prebuild": "npm install --prefix front_end",
+    "heroku-postbuild": "echo This runs afterwards.",
+    "postinstall": "babel lib -d dist",
     "start": "node dist/app.js",
     "start-watch": "nodemon lib/app.js --exec babel-node",
     "start-dev": "babel-node lib/app.js",
