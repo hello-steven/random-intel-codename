@@ -15,6 +15,7 @@ div#display_name {
   box-sizing: border-box;
   background: hsla(248, 100%, 76%, 1);
   border-radius: 6px;
+  border: solid;
 }
 #copy_name {
   display: inline-block;
@@ -28,12 +29,16 @@ button {
   display: block;
   box-shadow: none;
   border: none;
-  background: #777;
+  background: #fff;
   padding: 1em;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   transition: background .25s;
+  border: solid #000 2px;
+  box-shadow: 3px 3px 0px #000;
+  border-radius: 4px;
 }
 button:hover {
-  background: #333;
+  background: #fff;
+  box-shadow: 2px 2px 0px #000;
 }
