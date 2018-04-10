@@ -6,7 +6,7 @@ Simple app for getting random Intel codename
 
 ## Public URL
 Hosted on Heroku Free Tier
-### https://stark-fjord-67107.herokuapp.com/
+### https://random-intel-codename.herokuapp.com/
 
 ## Inspiration
 + Mattias P Johansson's side project naming method. Featured in this [FunFunFunction Video](https://www.youtube.com/watch?v=NRrgtUJnkIo&feature=youtu.be&t=4m40s)
