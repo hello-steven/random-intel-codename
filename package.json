@@ -4,7 +4,7 @@
   "description": "An app name generator that takes names from intel's list of codenames",
   "main": "./dist/app.js",
   "scripts": {
-    "postinstall": "babel lib -d dist",
+    "postinstall": "cd front_end && npm install && cd .. && babel lib -d dist",
     "start": "node dist/app.js",
     "start-watch": "nodemon lib/app.js --exec babel-node",
     "start-dev": "babel-node lib/app.js",
