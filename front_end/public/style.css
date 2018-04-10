@@ -13,8 +13,15 @@ div#display_name {
   line-height: 1.5;
   padding: 1em 2em;
   box-sizing: border-box;
-  background: #eee;
+  background: hsla(248, 100%, 76%, 1);
   border-radius: 6px;
+}
+#copy_name {
+  display: inline-block;
+  font-size: 18px;
+}
+#copy_kebab {
+  vertical-align: middle;
 }
 button {
   margin: 0 auto;
