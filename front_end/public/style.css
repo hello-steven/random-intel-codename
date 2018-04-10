@@ -1,5 +1,5 @@
 h1 {
-  font-family: sans-serif;
+  font-family: monospace, sans-serif;
   text-align: center;
 }
 div#display_name {
@@ -32,6 +32,7 @@ button {
   background: #fff;
   padding: 1em;
   color: #000;
+  font-weight: bold;
   text-transform: uppercase;
   transition: background .25s;
   border: solid #000 2px;
