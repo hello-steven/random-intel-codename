@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rollup -c",
-    "postinstall": "rollup -c",
+    "postinstall": "npm run build",
     "watch": "rollup -c -w"
   },
   "author": "",
