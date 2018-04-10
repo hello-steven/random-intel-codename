@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 (function () {
   // define variables that reference elements on our page
   function getNewName () {
