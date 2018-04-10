@@ -8,6 +8,9 @@ Simple app for getting random Intel codename
 Hosted on Heroku Free Tier
 ### https://random-intel-codename.herokuapp.com/
 
+
+> ![Preview Gif](https://raw.githubusercontent.com/whiteboxpub/random-intel-codename/master/readme_assets/random-intel-codename.gif)
+
 ## Inspiration
 + Mattias P Johansson's side project naming method. Featured in this [FunFunFunction Video](https://www.youtube.com/watch?v=NRrgtUJnkIo&feature=youtu.be&t=4m40s)
 
