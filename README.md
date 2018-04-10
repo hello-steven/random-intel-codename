@@ -83,7 +83,7 @@ See also the list of [contributors](https://github.com/whiteboxpub/random-intel-
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://raw.githubusercontent.com/BTBTravis/mke-bus-graphql/master/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://raw.githubusercontent.com/whiteboxpub/random-intel-codename/master/LICENSE.md) file for details
 
 ## Acknowledgments
 
