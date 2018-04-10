@@ -22,9 +22,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-To get MKE BUS GraphQL server running on your local machine do the following steps.
+To get Random Intel Codename server running on your local machine do the following steps.
 
-1. ```git clone https://github.com/whiteboxpub/wiki-intel-namer.git```
+1. ```git clone https://github.com/whiteboxpub/random-intel-codename.git```
 1. ```cd random-intel-codename```
 1. ```npm install```
 1. ```npm run start```  ||  ```npm run start-watch```
@@ -72,14 +72,14 @@ We use [ESLint](https://eslint.org/) to avoid divergent coding styles. The proce
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [releases page](https://github.com/BTBTravis/mke-bus-graphql/releases). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [releases page](https://github.com/whiteboxpub/random-intel-codename/releases). 
 
 ## Authors
 + **Steven Price** - *Inital work* - [stevenjacobprice.com](https://www.stevenjacobprice.com/), [GitHub](https://github.com/whiteboxpub)
 + **Travis Shears** - *Initial work* - [travisshears.com](https://travisshears.com/),
 [GitHub](https://github.com/BTBTravis/)
 
-See also the list of [contributors](https://github.com/BTBTravis/mke-bus-graphql/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/whiteboxpub/random-intel-codename/graphs/contributors) who participated in this project.
 
 ## License
 
