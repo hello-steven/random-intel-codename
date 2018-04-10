@@ -2,6 +2,6 @@ node_modules
 .env
 npm-debug.log
 dist
-bundle.js
+/front_end/public/*.js
 bundle.js.map
 .orig
