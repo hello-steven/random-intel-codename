@@ -38,7 +38,7 @@ div#display_name {
   cursor: pointer;
 }
 button {
-  margin: 0 auto;
+  margin: 0 auto 2em; 
   display: block;
   box-shadow: none;
   border: none;

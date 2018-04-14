@@ -7,11 +7,13 @@ import createNames from '../lib/names';
 import jsdom from 'jsdom';
 import axios from 'axios';
 import R from 'ramda';
+import Foswig from 'foswig';
 
 const realServices = {
   axios: axios,
   jsdom: jsdom.JSDOM,
-  R:R
+  R:R,
+  Foswig: Foswig
 };
 describe('Names Module', function () {
   //let realNamesAPI = createNames(realServices)();
@@ -19,30 +21,25 @@ describe('Names Module', function () {
   beforeEach(function() {
     realNamesAPI = createNames(realServices)();
   });
-  it('kebabCase swaps space for dash', () => {
-    return realNamesAPI.then(function (api) {
-      let name = api.toKebabCase('TEST test');
-      expect(name).to.be.an('string');
-      expect(/-/g.test(name)).to.equal(true);
-    });
-  });
-  it('kebabCase trims start and end spaces', () => {
-    return realNamesAPI.then(function (api) {
-      let name = api.toKebabCase('  TEST test  ');
-      expect(name).to.be.an('string');
-      expect(name[0] !== '-').to.equal(true);
-      expect(name[name.length] !== '-').to.equal(true);
-    });
-  });
   it('createGetName returns a promise', () => {
     expect(realNamesAPI).to.be.an('promise');
   });
-  it('getName returnes a names', () => {
+  it('getName returnes a name', () => {
     return realNamesAPI.then(function (api) {
       let names = api.getName();
-      expect(names).to.be.an('object');
-      expect(names).to.have.property('name');
-      expect(names).to.have.property('kebabCase');
+      expect(names).to.be.an('string');
+    });
+  });
+  it('getKebabCase returnes a name', () => {
+    return realNamesAPI.then(function (api) {
+      let names = api.getKebabCaseName();
+      expect(names).to.be.an('string');
+    });
+  });
+  it('getShuffledName returnes a name', () => {
+    return realNamesAPI.then(function (api) {
+      let names = api.getShuffledName();
+      expect(names).to.be.an('string');
     });
   });
 });
