@@ -67,6 +67,7 @@ We use [ESLint](https://eslint.org/) to avoid divergent coding styles. The proce
 1. Add `/name` to the URL to just return a random codename. 
 
 ## Built With
+* [Foswig.js](https://www.npmjs.com/package/foswig) - Power behind shuffle feature 
 * [Express.js](https://expressjs.com/) - The Nodejs server  framework used
 * [axios](https://github.com/axios/axios) - The request library used
 * [Babel](https://babeljs.io/) - The ES6 compiler used
