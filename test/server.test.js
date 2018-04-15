@@ -3,90 +3,56 @@ const expect = chai.expect;
 
 import supertest from 'supertest';
 import createServer from '../lib/shell';
-
+import axios from 'axios';
 
 describe('Server Module', function () {
   this.timeout(5000);  // extend timeout to allow for network latency
-  let serverPromise;
-  beforeEach(function () {
-    serverPromise = createServer();
-  });
   it('root returns 200', () => {
-    return serverPromise.then(server => {
-      return supertest(server)
-        .get('/')
-        .expect(200)
-        .then(test => {
-          server.close();
-          return test;
-        }).catch(e => server.close());
-    });
+    return axios.get('http://localhost:3000')
+      .then(res => {
+        expect(res.status).to.equal(200);
+      });
   });
   it('/name returns a name', () => {
-    return serverPromise.then(server => {
-      return supertest(server)
-        .get('/kebab')
-        .expect(200)
-        .then(res => {
-          let name = res.text;
-          expect(name).to.be.a('string');
-          expect(/{/g.test(name)).to.equal(false);
-          expect(name.length > 2).to.equal(true);
-        })
-        .then(test => {
-          server.close();
-          return test;
-        }).catch(e => server.close())
-    });
+    return axios.get('http://localhost:3000/name')
+      .then(res => {
+        expect(res.status).to.equal(200);
+        let name = res.data;
+        expect(name).to.be.a('string');
+        expect(/{/g.test(name)).to.equal(false);
+        expect(name.length > 2).to.equal(true);
+      })
   });
   it('/kebab return a kebab', () => {
-    return serverPromise.then(server => {
-      return supertest(server)
-        .get('/kebab')
-        .expect(200)
-        .then(res => {
-          let name = res.text;
-          expect(name).to.be.a('string');
-          expect(/{/g.test(name)).to.equal(false); // make sure it just a name and not js object
-          expect(name.length > 2).to.equal(true);
-        })
-        .then(test => {
-          server.close();
-          return test;
-        }).catch(e => server.close());
-    });
+    return axios.get('http://localhost:3000/kebab')
+      .then(res => {
+        expect(res.status).to.equal(200);
+        let name = res.data;
+        expect(name).to.be.a('string');
+        expect(/{/g.test(name)).to.equal(false); // make sure it just a name and not js object
+        expect(name.length > 2).to.equal(true);
+      });
   });
   it('/shuffle return a kebab', () => {
-    return serverPromise.then(server => {
-      return supertest(server)
-        .get('/shuffle')
-        .expect(200)
-        .then(res => {
-          server.close();
-          let name = res.text;
-          expect(name).to.be.a('string');
-          expect(/{/g.test(name)).to.equal(false); // make sure it just a name and not js object
-          expect(name.length > 2).to.equal(true);
-          expect("test").to.equal("fuck");
-        })
-    });
+    return axios.get('http://localhost:3000/shuffled')
+      .then(res => {
+        expect(res.status).to.equal(200);
+        let name = res.data;
+        expect(name).to.be.a('string');
+        expect(/{/g.test(name)).to.equal(false); // make sure it just a name and not js object
+        expect(name.length > 2).to.equal(true);
+      })
   });
   it('/all returns json', () => {
-    return serverPromise.then(server => {
-      return supertest(server)
-        .get('/all')
-        .expect(200)
-        .then(res => {
-          let x = JSON.parse(res.text);
-          expect(x).to.be.an('object');
-          expect(x).to.have.property('name');
-          expect(x).to.have.property('kebabCase');
-        })
-        .then(test => {
-          server.close();
-          return test;
-        }).catch(e => server.close());
-    });
+    return axios.get('http://localhost:3000/all')
+      .then(res => {
+        expect(res.status).to.equal(200);
+        let x = res.data;
+        expect(x).to.be.an('object');
+        expect(x).to.have.property('name');
+        expect(x).to.have.property('kebab');
+        expect(x).to.have.property('shuffle');
+      });
   });
 });
 
