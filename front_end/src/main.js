@@ -8,6 +8,7 @@ const randomColor = () => {
 const wrapperEl = document.getElementById('display_name');
 const inputEl = document.getElementById('copy_name');
 const getNameBtnEl = document.getElementById('get_name');
+const getShuffledNameBtnEl = document.getElementById('get_shuffle');
 const copyBtnEl = document.getElementById('copy_kebab');
 
 const getNewName = () => {
@@ -18,6 +19,17 @@ const getNewName = () => {
       copyBtnEl.value = res.data;
     })
 }
+
+const getShuffledName = () => {
+  axios.get('/shuffled')
+    .then(res => {
+      wrapperEl.style.background = randomColor();
+      inputEl.value = res.data;
+      copyBtnEl.value = res.data;
+    })
+}
+
+
 
 const copyText = () => {
   inputEl.select();
@@ -32,6 +44,10 @@ const copyText = () => {
 // attach event handlers
 getNameBtnEl.addEventListener('click', () => {
   getNewName();
+});
+
+getShuffledNameBtnEl.addEventListener('click', () => {
+  getShuffledName();
 });
 copyBtnEl.addEventListener('click', () => {
   copyText();
